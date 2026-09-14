@@ -1,6 +1,6 @@
 # Draws the extension icons.
 # Run from the project root:  powershell -ExecutionPolicy Bypass -File scripts/makeIcons.ps1
-# The artwork matches the "not saved" badge: an arrow dropping into a tray.
+# The artwork shows what the extension does: two photos, and one arrow that points both ways.
 
 Add-Type -AssemblyName System.Drawing
 
@@ -10,34 +10,55 @@ $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
 $graphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
 $graphics.Clear([System.Drawing.Color]::Transparent)
 
+function New-RoundedRectanglePath {
+  param(
+    [int]$Left,
+    [int]$Top,
+    [int]$Width,
+    [int]$Height,
+    [int]$CornerRadius
+  )
+  $diameter = $CornerRadius * 2
+  $path = New-Object System.Drawing.Drawing2D.GraphicsPath
+  $path.AddArc($Left, $Top, $diameter, $diameter, 180, 90)
+  $path.AddArc($Left + $Width - $diameter, $Top, $diameter, $diameter, 270, 90)
+  $path.AddArc($Left + $Width - $diameter, $Top + $Height - $diameter, $diameter, $diameter, 0, 90)
+  $path.AddArc($Left, $Top + $Height - $diameter, $diameter, $diameter, 90, 90)
+  $path.CloseFigure()
+  return $path
+}
+
 # Dark rounded square background.
-$radius = [int]($source * 0.22)
-$background = New-Object System.Drawing.Drawing2D.GraphicsPath
-$background.AddArc(0, 0, $radius * 2, $radius * 2, 180, 90)
-$background.AddArc($source - $radius * 2, 0, $radius * 2, $radius * 2, 270, 90)
-$background.AddArc($source - $radius * 2, $source - $radius * 2, $radius * 2, $radius * 2, 0, 90)
-$background.AddArc(0, $source - $radius * 2, $radius * 2, $radius * 2, 90, 90)
-$background.CloseFigure()
+$background = New-RoundedRectanglePath -Left 0 -Top 0 -Width $source -Height $source -CornerRadius ([int]($source * 0.22))
 $backgroundBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255, 32, 33, 36))
 $graphics.FillPath($backgroundBrush, $background)
 
-# Amber arrow dropping into a tray.
-$pen = New-Object System.Drawing.Pen ([System.Drawing.Color]::FromArgb(255, 255, 179, 0)), 46
-$pen.StartCap = [System.Drawing.Drawing2D.LineCap]::Round
-$pen.EndCap = [System.Drawing.Drawing2D.LineCap]::Round
-$pen.LineJoin = [System.Drawing.Drawing2D.LineJoin]::Round
+$amber = [System.Drawing.Color]::FromArgb(255, 255, 179, 0)
 
-$graphics.DrawLine($pen, 256, 96, 256, 288)
-$graphics.DrawLines($pen, @(
-  (New-Object System.Drawing.Point(180, 216)),
-  (New-Object System.Drawing.Point(256, 292)),
-  (New-Object System.Drawing.Point(332, 216))
+# Two photo frames, side by side.
+$framePen = New-Object System.Drawing.Pen $amber, 34
+$framePen.LineJoin = [System.Drawing.Drawing2D.LineJoin]::Round
+$leftFrame = New-RoundedRectanglePath -Left 64 -Top 76 -Width 164 -Height 164 -CornerRadius 26
+$rightFrame = New-RoundedRectanglePath -Left 284 -Top 76 -Width 164 -Height 164 -CornerRadius 26
+$graphics.DrawPath($framePen, $leftFrame)
+$graphics.DrawPath($framePen, $rightFrame)
+
+# One arrow that points both ways, under the frames.
+$arrowPen = New-Object System.Drawing.Pen $amber, 40
+$arrowPen.StartCap = [System.Drawing.Drawing2D.LineCap]::Round
+$arrowPen.EndCap = [System.Drawing.Drawing2D.LineCap]::Round
+$arrowPen.LineJoin = [System.Drawing.Drawing2D.LineJoin]::Round
+
+$graphics.DrawLine($arrowPen, 150, 384, 362, 384)
+$graphics.DrawLines($arrowPen, @(
+  (New-Object System.Drawing.Point(202, 332)),
+  (New-Object System.Drawing.Point(150, 384)),
+  (New-Object System.Drawing.Point(202, 436))
 ))
-$graphics.DrawLines($pen, @(
-  (New-Object System.Drawing.Point(120, 340)),
-  (New-Object System.Drawing.Point(120, 404)),
-  (New-Object System.Drawing.Point(392, 404)),
-  (New-Object System.Drawing.Point(392, 340))
+$graphics.DrawLines($arrowPen, @(
+  (New-Object System.Drawing.Point(310, 332)),
+  (New-Object System.Drawing.Point(362, 384)),
+  (New-Object System.Drawing.Point(310, 436))
 ))
 
 $outputDirectory = Join-Path (Split-Path -Parent $PSScriptRoot) 'icons'
@@ -54,6 +75,7 @@ foreach ($size in 16, 32, 48, 128) {
   $scaled.Dispose()
   Write-Host "wrote icon$size.png"
 }
+
 
 $graphics.Dispose()
 $bitmap.Dispose()
