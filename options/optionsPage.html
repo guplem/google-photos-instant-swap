@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Google Photos Instant Swap</title>
+    <link rel="stylesheet" href="optionsPage.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Google Photos Instant Swap</h1>
+
+      <section>
+        <h2>Instant swap</h2>
+        <p class="hint">Removes the slide between photos so you can flick back and forth and compare them.</p>
+
+        <label class="row">
+          <input type="checkbox" id="instantSwapEnabled" />
+          <span>Swap photos instantly</span>
+        </label>
+
+        <label class="row">
+          <span class="label">What to shorten</span>
+          <select id="instantSwapLevel">
+            <option value="transitions">CSS transitions only (safe default)</option>
+            <option value="transitions-and-animations">Transitions and keyframe animations</option>
+          </select>
+        </label>
+
+        <label class="row">
+          <input type="checkbox" id="patchReducedMotion" />
+          <span>Tell the page you prefer reduced motion</span>
+        </label>
+
+        <label class="row">
+          <input type="checkbox" id="clampWebAnimations" />
+          <span>Also shorten JavaScript animations (turn on if the slide is still there)</span>
+        </label>
+
+        <p class="hint">The last two settings apply from the next page load. Reload Google Photos after changing them.</p>
+      </section>
+
+      <div class="footer">
+        <button type="button" id="save" class="primary">Save settings</button>
+        <button type="button" id="reset" class="secondary">Reset to defaults</button>
+        <span id="status" role="status"></span>
+      </div>
+    </main>
+
+    <script type="module" src="optionsPage.js"></script>
+  </body>
+</html>
