@@ -91,9 +91,8 @@ powershell -ExecutionPolicy Bypass -File scripts/makeIcons.ps1
 
 ## Publish
 
-The extension is not on the Chrome Web Store yet. `store/storeListing.md` holds every text and answer the submission
-needs, and `PRIVACY.md` is the privacy policy the listing links to.
-`NEXT-STEPS.md` is the handover for an agent that can control Chrome, and it goes away once the extension is live.
+The extension is submitted to the Chrome Web Store, and it waits for the review. `store/storeListing.md` holds every
+text and answer the submission needs, and `PRIVACY.md` is the privacy policy the listing links to.
 
 To build the ZIP you upload, run:
 
