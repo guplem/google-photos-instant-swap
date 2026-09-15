@@ -12,10 +12,17 @@ Instant Swap for Google Photos
 
 The brand does not come first, because Chrome Web Store policy limits a name that suggests Google made the extension.
 
-## Short description (132 characters maximum)
+The dashboard does not hold this text. It shows it as `Title from package`, and it reads it from the `name` field in
+`manifest.json`.
+
+## Short description
+
+The dashboard does not hold this text either. It shows it as `Summary from package`, and it reads it from the
+`description` field in `manifest.json`. To change it, change the manifest, build the ZIP again, and upload the new
+package.
 
 ```
-Removes the slide between photos on Google Photos, so every arrow key press shows one clean photo.
+Removes the slide between photos on the Google Photos website, so each arrow key press shows one clean photo.
 ```
 
 ## Detailed description
@@ -54,7 +61,12 @@ The code is open source: https://github.com/guplem/google-photos-instant-swap
 
 ## Category
 
-`Photos`. Second choice: `Workflow & Planning`.
+`Functionality and UI`, in the group Make Chrome yours. The extension changes how a website interface behaves, so that
+group fits it. The Chrome Web Store removed the `Photos` category, so the dashboard does not offer it. The closest second
+choice is `Workflow and planning`.
+
+Do not pick `Accessibility`. The single purpose text says that the extension helps a user compare two photos, and a
+reviewer checks that the category and the single purpose agree.
 
 ## Language
 
@@ -108,24 +120,37 @@ boxes:
 
 ## Images
 
-| Asset         | Size     | Where it is                       |
-| ------------- | -------- | --------------------------------- |
-| Store icon    | 128x128  | `icons/icon128.png`               |
-| Promo tile    | 440x280  | `store/promoTileSmall440x280.png` |
-| Screenshot x2 | 1280x800 | You take these. See below.        |
+Every image below is in the repository. Run `powershell -ExecutionPolicy Bypass -File scripts/makeStoreScreenshots.ps1`
+to draw the screenshots again after a change to the options page or to the texts.
 
-### How to take the screenshots
+| Asset        | Size     | Where it is                                      |
+| ------------ | -------- | ------------------------------------------------ |
+| Store icon   | 128x128  | `icons/icon128.png`                              |
+| Promo tile   | 440x280  | `store/promoTileSmall440x280.png`                |
+| Screenshot 1 | 1280x800 | `store/screenshots/screenshot1WhatItChanges.png` |
+| Screenshot 2 | 1280x800 | `store/screenshots/screenshot2OptionsPage.png`   |
+| Screenshot 3 | 1280x800 | `store/screenshots/screenshot3Privacy.png`       |
 
-The store needs at least one screenshot, and it becomes public.
+Upload them in that order. The dashboard shows the first one first.
+
+### Why two of them are diagrams
+
+A still image cannot show a missing animation, so screenshot 1 and screenshot 3 explain the change with drawings, and
+each drawing says on the image that it is a diagram. Screenshot 2 is the real options page, rendered by Chrome from
+`options/optionsPage.html`.
+
+### Optional: add a real capture of Google Photos
+
+A real capture makes the listing stronger, and only you can take one. Nobody must build a copy of the Google Photos
+interface for a screenshot: that is both a trademark problem and a reason for rejection.
 
 1. Open `chrome://extensions`, turn on Developer mode, and load this folder with **Load unpacked**.
 2. Open [photos.google.com](https://photos.google.com) and open a photo that **you own**. No other people's faces, no
    email addresses, no file names you do not want to share.
 3. Press `F12` to open DevTools, click the device toolbar icon, and set a custom size of 1280x800.
 4. Open the DevTools three dot menu and choose **Capture screenshot**.
-5. Take a second shot of the options page: click the extension icon in the toolbar.
 
 ## Distribution
 
-- Visibility: `Unlisted` for the first submission if you want to test the install flow, then `Public`.
+- Visibility: `Public`. The user chose it for the first submission, on 15 September 2026.
 - Countries: all.

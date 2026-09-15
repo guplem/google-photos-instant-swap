@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="shotCommon.css" />
+    <style>
+      .panels {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-top: 40px;
+        flex: 1;
+      }
+      .panel {
+        background: #2a2b2e;
+        border: 1px solid #3c4043;
+        border-radius: 20px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .stage {
+        position: relative;
+        flex: 1;
+        border-radius: 14px;
+        background: #202124;
+        overflow: hidden;
+      }
+      .frame {
+        position: absolute;
+        top: 24px;
+        width: 340px;
+        height: 226px;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .frame svg {
+        display: block;
+      }
+      .sliding-out {
+        left: 30px;
+        opacity: 0.55;
+      }
+      .sliding-in {
+        left: 172px;
+        opacity: 0.75;
+      }
+      .clean {
+        left: 101px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+      .panel-title {
+        font-size: 21px;
+        font-weight: 700;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .note {
+        font-size: 16px;
+        color: #9aa0a6;
+        min-height: 44px;
+      }
+      .diagram-label {
+        position: absolute;
+        bottom: 12px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 13px;
+        color: #80868b;
+        letter-spacing: 0.3px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="eyebrow">What the extension changes</p>
+    <h1>Press an arrow key. <span class="accent">See one photo, not two.</span></h1>
+    <p class="lead">
+      Google Photos slides one photo out while the next slides in. Instant Swap shortens that slide, so each press lands on a
+      clean photo.
+    </p>
+
+    <div class="panels">
+      <div class="panel">
+        <div class="row">
+          <span class="panel-title">Without the extension</span>
+          <span class="tag bad">Photos overlap</span>
+        </div>
+        <div class="stage">
+          <div class="frame sliding-out">
+            <svg width="340" height="226" viewBox="0 0 340 226">
+              <defs>
+                <linearGradient id="skyA" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#2f6fb0" />
+                  <stop offset="1" stop-color="#8fc0e8" />
+                </linearGradient>
+              </defs>
+              <rect width="340" height="226" fill="url(#skyA)" />
+              <circle cx="266" cy="52" r="24" fill="#ffe082" />
+              <path d="M0 226 L96 108 L172 226 Z" fill="#27502f" />
+              <path d="M128 226 L226 92 L340 226 Z" fill="#1d3f26" />
+            </svg>
+          </div>
+          <div class="frame sliding-in">
+            <svg width="340" height="226" viewBox="0 0 340 226">
+              <defs>
+                <linearGradient id="skyB" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#8a4a7d" />
+                  <stop offset="1" stop-color="#f0a97c" />
+                </linearGradient>
+              </defs>
+              <rect width="340" height="226" fill="url(#skyB)" />
+              <circle cx="86" cy="64" r="26" fill="#fff1c4" />
+              <path d="M0 226 L120 126 L214 226 Z" fill="#4a2f3f" />
+              <path d="M160 226 L262 104 L340 226 Z" fill="#33202c" />
+            </svg>
+          </div>
+          <p class="diagram-label">Diagram of the slide, not a screenshot</p>
+        </div>
+        <p class="note">Press the arrow key fast and both photos are on screen at once. You cannot tell them apart.</p>
+      </div>
+
+      <div class="panel">
+        <div class="row">
+          <span class="panel-title">With Instant Swap</span>
+          <span class="tag good">One clean photo</span>
+        </div>
+        <div class="stage">
+          <div class="frame clean">
+            <svg width="340" height="226" viewBox="0 0 340 226">
+              <defs>
+                <linearGradient id="skyC" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#8a4a7d" />
+                  <stop offset="1" stop-color="#f0a97c" />
+                </linearGradient>
+              </defs>
+              <rect width="340" height="226" fill="url(#skyC)" />
+              <circle cx="86" cy="64" r="26" fill="#fff1c4" />
+              <path d="M0 226 L120 126 L214 226 Z" fill="#4a2f3f" />
+              <path d="M160 226 L262 104 L340 226 Z" fill="#33202c" />
+            </svg>
+          </div>
+          <p class="diagram-label">Diagram of the result, not a screenshot</p>
+        </div>
+        <p class="note">The next photo is simply there. Flick back and forth and compare the two.</p>
+      </div>
+    </div>
+  </body>
+</html>

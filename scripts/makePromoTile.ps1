@@ -12,7 +12,8 @@ if (-not (Test-Path $iconPath)) {
 
 $width = 440
 $height = 280
-$bitmap = New-Object System.Drawing.Bitmap($width, $height)
+# A 24-bit canvas carries no alpha channel. The Chrome Web Store rejects a promo tile that holds one.
+$bitmap = New-Object System.Drawing.Bitmap($width, $height, [System.Drawing.Imaging.PixelFormat]::Format24bppRgb)
 $graphics = [System.Drawing.Graphics]::FromImage($bitmap)
 $graphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
 $graphics.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
