@@ -12,10 +12,17 @@ Instant Swap for Google Photos
 
 The brand does not come first, because Chrome Web Store policy limits a name that suggests Google made the extension.
 
-## Short description (132 characters maximum)
+The dashboard does not hold this text. It shows it as `Title from package`, and it reads it from the `name` field in
+`manifest.json`.
+
+## Short description
+
+The dashboard does not hold this text either. It shows it as `Summary from package`, and it reads it from the
+`description` field in `manifest.json`. To change it, change the manifest, build the ZIP again, and upload the new
+package.
 
 ```
-Removes the slide between photos on Google Photos, so every arrow key press shows one clean photo.
+Removes the slide between photos on the Google Photos website, so each arrow key press shows one clean photo.
 ```
 
 ## Detailed description
@@ -54,7 +61,12 @@ The code is open source: https://github.com/guplem/google-photos-instant-swap
 
 ## Category
 
-`Photos`. Second choice: `Workflow & Planning`.
+`Functionality and UI`, in the group Make Chrome yours. The extension changes how a website interface behaves, so that
+group fits it. The Chrome Web Store removed the `Photos` category, so the dashboard does not offer it. The closest second
+choice is `Workflow and planning`.
+
+Do not pick `Accessibility`. The single purpose text says that the extension helps a user compare two photos, and a
+reviewer checks that the category and the single purpose agree.
 
 ## Language
 
@@ -140,5 +152,5 @@ interface for a screenshot: that is both a trademark problem and a reason for re
 
 ## Distribution
 
-- Visibility: `Unlisted` for the first submission if you want to test the install flow, then `Public`.
+- Visibility: `Public`. The user chose it for the first submission, on 15 September 2026.
 - Countries: all.
