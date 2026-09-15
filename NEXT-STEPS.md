@@ -1,10 +1,32 @@
 # Next steps: publish this extension on the Chrome Web Store
 
-**Another agent left this file for you.** That agent works in Claude Code, in a terminal. It can read and write files,
-and it can run commands, but it cannot control a browser. You can. This file tells you what is ready, what is left, and
-where every value that you must type comes from.
+**Another agent left this file for you.** That agent works in Claude Code, in a terminal. This file tells you what is
+ready, what is left, and where every value that you must type comes from.
+
+**No agent can do the dashboard clicks, not even an agent that drives a browser.** Chrome blocks every extension from
+the Chrome Web Store, so a browser agent gets the error `The extensions gallery cannot be scripted` on both
+`chrome.google.com/webstore` and `chromewebstore.google.com`. A human clicks. An agent prepares each text and each
+image, and then guides the human field by field.
 
 Delete this file after the extension is live. It describes one task, not the project.
+
+## State on 15 September 2026: submitted, waiting for the review
+
+The user filled the dashboard and clicked **Submit for review**. The item state is **Pending review**.
+
+| Field           | Value                                                                     |
+| --------------- | ------------------------------------------------------------------------- |
+| Item ID         | `dlcjmnoahhicmaeajgdjlbepdnomjmdm`                                        |
+| Public URL      | https://chromewebstore.google.com/detail/dlcjmnoahhicmaeajgdjlbepdnomjmdm |
+| Category        | `Functionality and UI`. The store removed the `Photos` category.          |
+| Visibility      | `Public`, all countries                                                   |
+| Remote code     | `No`. The package holds every file that it runs.                          |
+| Data collection | Nothing ticked. All three certifications ticked.                          |
+
+The review takes longer than usual, because the host permission `https://photos.google.com/*` starts an in-depth review.
+
+One question stays open: the account holds the item "Countdown to Rasta Run 2" in the state "Taken down", and nobody
+read that notice. A past takedown can make this review stricter.
 
 ## Who does what
 
@@ -30,6 +52,9 @@ Delete this file after the extension is live. It describes one task, not the pro
 
 ## Ask the user these questions first
 
+**Done on 15 September 2026, except the takedown question.** The user chose `Public`, and the user chose to submit with
+the three images in `store/screenshots/`.
+
 Ask them together, before you click anything.
 
 1. **The takedown.** The publisher account holds an old item, "Countdown to Rasta Run 2", with the state "Taken down".
@@ -42,6 +67,8 @@ Ask them together, before you click anything.
    whether they want to add one now or submit without it.
 
 ## The steps in the dashboard
+
+**Done on 15 September 2026.** Keep the steps, because a rejection sends you through them again.
 
 The dashboard is at <https://chrome.google.com/webstore/devconsole>. The user is already signed in, as the publisher
 "Triunity Studios".
