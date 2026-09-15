@@ -1,4 +1,4 @@
-# Google Photos Instant Swap
+# Instant Swap for Google Photos
 
 A Chrome extension for the Google Photos website. It removes the slide between photos.
 
@@ -87,6 +87,26 @@ To redraw the icons, run:
 
 ```bash
 powershell -ExecutionPolicy Bypass -File scripts/makeIcons.ps1
+```
+
+## Publish
+
+The extension is not on the Chrome Web Store yet. `store/storeListing.md` holds every text and answer the submission
+needs, and `PRIVACY.md` is the privacy policy the listing links to.
+
+To build the ZIP you upload, run:
+
+```bash
+powershell -ExecutionPolicy Bypass -File scripts/packageExtension.ps1
+```
+
+It writes `dist/instant-swap-for-google-photos-<version>.zip` with only the files Chrome runs: `manifest.json`, `src/`,
+`options/`, and `icons/`.
+
+To redraw the 440x280 promo image of the listing, run:
+
+```bash
+powershell -ExecutionPolicy Bypass -File scripts/makePromoTile.ps1
 ```
 
 ## See also

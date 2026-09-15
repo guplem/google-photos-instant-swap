@@ -63,7 +63,7 @@ For each step (or the single unit):
 
 3. **Spawn the implementation agent** (Agent tool, `isolation: "worktree"`), pasting the explore reports into its prompt:
 
-   > You are implementing GitHub issue #<NUMBER> for Google Photos Instant Swap.
+   > You are implementing GitHub issue #<NUMBER> for Instant Swap for Google Photos.
    >
    > ## Issue
    >
