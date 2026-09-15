@@ -111,6 +111,7 @@ The MAIN world script starts before the settings load, so it applies its own def
 - **The MAIN world patch cannot change what a CSS `@media (prefers-reduced-motion)` block matches.** It only changes the answer JavaScript gets from `matchMedia`. Only a real browser or system setting changes the CSS side.
 - **`contentEntry.js` touches only `<html>`, so it needs no `waitForBody`.** `run_at` is `document_start`, so `<body>` does not exist yet. Add the wait if you ever touch `document.body`.
 - **`node --test test/` fails on Node 24.** It treats the folder as a module. Run bare `node --test`, which is what `npm test` does.
+- **No agent can fill the Chrome Web Store dashboard.** Chrome blocks every extension from the store, so a browser agent gets the error `The extensions gallery cannot be scripted` on `chrome.google.com/webstore` and on `chromewebstore.google.com`. A human clicks. An agent prepares each text and each image in `store/storeListing.md`, and then guides the human field by field.
 - **Prettier uses `endOfLine: "auto"` on purpose.** This machine has `core.autocrlf=true`, so the working tree holds CRLF line endings. A pinned `endOfLine: "lf"` would fail the format check on every file while the content is correct.
 
 ## Test-Driven Development (mandatory)
