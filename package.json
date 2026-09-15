@@ -1,6 +1,6 @@
 {
   "name": "google-photos-instant-swap",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "description": "Chrome extension that removes the slide between photos on the Google Photos website, so you can compare two photos with the arrow keys.",

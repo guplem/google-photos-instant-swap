@@ -1,6 +1,6 @@
 # Architecture Decision Records (ADRs)
 
-This directory holds the Architecture Decision Records for Google Photos Instant Swap.
+This directory holds the Architecture Decision Records for Instant Swap for Google Photos.
 
 ## What is an ADR?
 

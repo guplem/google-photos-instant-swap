@@ -1,13 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "Google Photos Instant Swap",
-  "version": "0.1.0",
+  "name": "Instant Swap for Google Photos",
+  "version": "1.0.0",
   "description": "Removes the slide between photos on the Google Photos website, so each arrow key press shows one clean photo.",
   "minimum_chrome_version": "111",
   "permissions": ["storage"],
   "host_permissions": ["https://photos.google.com/*"],
   "action": {
-    "default_title": "Google Photos Instant Swap options",
+    "default_title": "Instant Swap for Google Photos options",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",
