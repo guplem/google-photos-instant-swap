@@ -93,6 +93,7 @@ powershell -ExecutionPolicy Bypass -File scripts/makeIcons.ps1
 
 The extension is not on the Chrome Web Store yet. `store/storeListing.md` holds every text and answer the submission
 needs, and `PRIVACY.md` is the privacy policy the listing links to.
+`NEXT-STEPS.md` is the handover for an agent that can control Chrome, and it goes away once the extension is live.
 
 To build the ZIP you upload, run:
 
@@ -108,6 +109,14 @@ To redraw the 440x280 promo image of the listing, run:
 ```bash
 powershell -ExecutionPolicy Bypass -File scripts/makePromoTile.ps1
 ```
+
+To redraw the three 1280x800 store screenshots, run:
+
+```bash
+powershell -ExecutionPolicy Bypass -File scripts/makeStoreScreenshots.ps1
+```
+
+It needs Chrome. It renders the real options page, and the two explainer images in `store/screenshotSources/`.
 
 ## See also
 

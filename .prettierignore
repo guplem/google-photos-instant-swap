@@ -2,5 +2,5 @@ node_modules/
 package-lock.json
 icons/
 dist/
-store/*.png
+store/**/*.png
 .reviews/

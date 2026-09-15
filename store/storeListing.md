@@ -108,22 +108,35 @@ boxes:
 
 ## Images
 
-| Asset         | Size     | Where it is                       |
-| ------------- | -------- | --------------------------------- |
-| Store icon    | 128x128  | `icons/icon128.png`               |
-| Promo tile    | 440x280  | `store/promoTileSmall440x280.png` |
-| Screenshot x2 | 1280x800 | You take these. See below.        |
+Every image below is in the repository. Run `powershell -ExecutionPolicy Bypass -File scripts/makeStoreScreenshots.ps1`
+to draw the screenshots again after a change to the options page or to the texts.
 
-### How to take the screenshots
+| Asset        | Size     | Where it is                                      |
+| ------------ | -------- | ------------------------------------------------ |
+| Store icon   | 128x128  | `icons/icon128.png`                              |
+| Promo tile   | 440x280  | `store/promoTileSmall440x280.png`                |
+| Screenshot 1 | 1280x800 | `store/screenshots/screenshot1WhatItChanges.png` |
+| Screenshot 2 | 1280x800 | `store/screenshots/screenshot2OptionsPage.png`   |
+| Screenshot 3 | 1280x800 | `store/screenshots/screenshot3Privacy.png`       |
 
-The store needs at least one screenshot, and it becomes public.
+Upload them in that order. The dashboard shows the first one first.
+
+### Why two of them are diagrams
+
+A still image cannot show a missing animation, so screenshot 1 and screenshot 3 explain the change with drawings, and
+each drawing says on the image that it is a diagram. Screenshot 2 is the real options page, rendered by Chrome from
+`options/optionsPage.html`.
+
+### Optional: add a real capture of Google Photos
+
+A real capture makes the listing stronger, and only you can take one. Nobody must build a copy of the Google Photos
+interface for a screenshot: that is both a trademark problem and a reason for rejection.
 
 1. Open `chrome://extensions`, turn on Developer mode, and load this folder with **Load unpacked**.
 2. Open [photos.google.com](https://photos.google.com) and open a photo that **you own**. No other people's faces, no
    email addresses, no file names you do not want to share.
 3. Press `F12` to open DevTools, click the device toolbar icon, and set a custom size of 1280x800.
 4. Open the DevTools three dot menu and choose **Capture screenshot**.
-5. Take a second shot of the options page: click the extension icon in the toolbar.
 
 ## Distribution
 

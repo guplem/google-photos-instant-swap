@@ -45,17 +45,18 @@ Both layers cover prose only. Neither covers code identifiers or text you quote 
 
 ## Commands
 
-| Task                                   | Command                                                                 | Notes                                                                            |
-| -------------------------------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| Install dependencies and the git hooks | `npm install`                                                           | The `prepare` script runs `lefthook install`. Run this once per clone.           |
-| Run every check, the way CI runs it    | `npm run check`                                                         | Format check, then type check, then tests. This is the umbrella script CI calls. |
-| Format the whole repo                  | `npm run format`                                                        | Prettier.                                                                        |
-| Check the format only                  | `npm run format:check`                                                  | Fix a failure with `npm run format`.                                             |
-| Type check                             | `npm run typecheck`                                                     | `tsc --noEmit` over the JSDoc types. Success prints nothing.                     |
-| Run the tests                          | `npm test`                                                              | `node --test`. It finds `test/*.test.js` on its own.                             |
-| Redraw the icons                       | `powershell -ExecutionPolicy Bypass -File scripts/makeIcons.ps1`        | Windows only. Run it only when the artwork changes.                              |
-| Redraw the store promo tile            | `powershell -ExecutionPolicy Bypass -File scripts/makePromoTile.ps1`    | Windows only. Run it after the icons change.                                     |
-| Build the store ZIP                    | `powershell -ExecutionPolicy Bypass -File scripts/packageExtension.ps1` | Windows only. Run it before every store upload. It writes `dist/`.               |
+| Task                                   | Command                                                                     | Notes                                                                                  |
+| -------------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Install dependencies and the git hooks | `npm install`                                                               | The `prepare` script runs `lefthook install`. Run this once per clone.                 |
+| Run every check, the way CI runs it    | `npm run check`                                                             | Format check, then type check, then tests. This is the umbrella script CI calls.       |
+| Format the whole repo                  | `npm run format`                                                            | Prettier.                                                                              |
+| Check the format only                  | `npm run format:check`                                                      | Fix a failure with `npm run format`.                                                   |
+| Type check                             | `npm run typecheck`                                                         | `tsc --noEmit` over the JSDoc types. Success prints nothing.                           |
+| Run the tests                          | `npm test`                                                                  | `node --test`. It finds `test/*.test.js` on its own.                                   |
+| Redraw the icons                       | `powershell -ExecutionPolicy Bypass -File scripts/makeIcons.ps1`            | Windows only. Run it only when the artwork changes.                                    |
+| Redraw the store promo tile            | `powershell -ExecutionPolicy Bypass -File scripts/makePromoTile.ps1`        | Windows only. Run it after the icons change.                                           |
+| Redraw the store screenshots           | `powershell -ExecutionPolicy Bypass -File scripts/makeStoreScreenshots.ps1` | Windows only. Needs Chrome. Run it after the options page or the listing texts change. |
+| Build the store ZIP                    | `powershell -ExecutionPolicy Bypass -File scripts/packageExtension.ps1`     | Windows only. Run it before every store upload. It writes `dist/`.                     |
 
 There is no build and no code generation. To try the extension, load the repository folder unpacked in Chrome (`README.md` has the steps).
 

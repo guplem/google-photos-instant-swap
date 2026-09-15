@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="shotCommon.css" />
+    <style>
+      .layout {
+        display: grid;
+        grid-template-columns: 430px 1fr;
+        gap: 48px;
+        align-items: center;
+        flex: 1;
+        margin-top: 24px;
+      }
+      .points {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        margin-top: 28px;
+      }
+      .points li {
+        display: flex;
+        gap: 12px;
+        font-size: 18px;
+        line-height: 1.45;
+        color: #e8eaed;
+      }
+      .dot {
+        flex: none;
+        width: 10px;
+        height: 10px;
+        margin-top: 8px;
+        border-radius: 50%;
+        background: #ffb300;
+      }
+      .window {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid #3c4043;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+        background: #202124;
+      }
+      .window-bar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        background: #2a2b2e;
+        border-bottom: 1px solid #3c4043;
+      }
+      .window-bar i {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: #5f6368;
+        display: block;
+      }
+      .window-bar span {
+        margin-left: 10px;
+        font-size: 14px;
+        color: #9aa0a6;
+      }
+      .window img {
+        display: block;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="eyebrow">The options page</p>
+    <h1>Four switches. <span class="accent">Nothing else.</span></h1>
+
+    <div class="layout">
+      <div>
+        <ul class="points">
+          <li><span class="dot"></span><span>Start with the safe default. It only shortens CSS transitions.</span></li>
+          <li><span class="dot"></span><span>Turn the swap off at any moment, without removing the extension.</span></li>
+          <li><span class="dot"></span><span>Two stronger settings, for a slide that survives the safe default.</span></li>
+          <li><span class="dot"></span><span>Your settings follow your Chrome profile. Nothing leaves the browser.</span></li>
+        </ul>
+      </div>
+      <div class="window">
+        <div class="window-bar"><i></i><i></i><i></i><span>Instant Swap for Google Photos - options</span></div>
+        <img src="optionsPageCropped.png" alt="The options page of the extension" />
+      </div>
+    </div>
+  </body>
+</html>

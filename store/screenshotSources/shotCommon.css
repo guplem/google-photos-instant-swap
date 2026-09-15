@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 1280px;
+  height: 800px;
+  overflow: hidden;
+}
+body {
+  background: #202124;
+  color: #ffffff;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 56px 64px;
+}
+.eyebrow {
+  color: #ffb300;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+h1 {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+h1 .accent {
+  color: #ffb300;
+}
+.lead {
+  margin-top: 14px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #bdc1c6;
+  max-width: 900px;
+}
+.photo {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #3c4043;
+  position: relative;
+}
+.caption {
+  font-size: 16px;
+  color: #9aa0a6;
+}
+.tag {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.tag.bad {
+  background: #5c1f14;
+  color: #ffb0a0;
+}
+.tag.good {
+  background: #16391f;
+  color: #a8e6b4;
+}
