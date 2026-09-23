@@ -8,7 +8,11 @@ That is the whole extension. It stores nothing about your photos, it opens nothi
 
 ## Install
 
-The extension is not on the Chrome Web Store. Load it from this folder.
+Install it from the [Chrome Web Store](https://chromewebstore.google.com/detail/instant-swap-for-google-p/dlcjmnoahhicmaeajgdjlbepdnomjmdm). Chrome then updates it on its own.
+
+### Load it from this folder
+
+Use this path to try a change before it reaches the store.
 
 1. Download or clone this repository.
 2. Open `chrome://extensions` in Chrome.
@@ -91,8 +95,8 @@ powershell -ExecutionPolicy Bypass -File scripts/makeIcons.ps1
 
 ## Publish
 
-The extension is submitted to the Chrome Web Store, and it waits for the review. `store/storeListing.md` holds every
-text and answer the submission needs, and `PRIVACY.md` is the privacy policy the listing links to.
+The extension is published on the [Chrome Web Store](https://chromewebstore.google.com/detail/instant-swap-for-google-p/dlcjmnoahhicmaeajgdjlbepdnomjmdm). `store/storeListing.md` holds every text and answer
+the listing needs, and `PRIVACY.md` is the privacy policy the listing links to.
 
 To build the ZIP you upload, run:
 
@@ -119,11 +123,12 @@ It needs Chrome. It renders the real options page, and the two explainer images 
 
 ## See also
 
-Three sister extensions for the same website:
+Four sister extensions for the same website:
 
 - [google-photos-auto-save-check](https://github.com/guplem/google-photos-auto-save-check) marks the photos of a shared album that are not in your library yet. It was in the same extension as this one until they were split apart.
 - [google-photos-auto-fav](https://github.com/guplem/google-photos-auto-fav) marks a list of photos as favourites.
 - [google-photos-auto-date](https://github.com/guplem/google-photos-auto-date) fixes the date, the time and the timezone of a list of photos.
+- [google-photos-location-check](https://github.com/guplem/google-photos-location-check) marks the photos of an album that carry no location.
 
 ## Credits
 
